@@ -27,6 +27,12 @@ export function mockRoster() {
       m('21', 'Turnip', 'maybe', ['DPS_Berserker', 'DPS_Dragonhunter', 'Power_Reaper']),
       m('22', 'Ghostpepper', null, ['DPS_Amalgam'])
     ],
+    groups: [
+      { name: 'Main Support Classes', classes: ['Support_Luminary', 'Support_Tubadoor', 'Hybrid_FB', 'Support_Druid', 'Support_Evoker'] },
+      { name: 'Other Support Classes', classes: ['Support_DH', 'Support_Harbinger', 'Support_Specter', 'Minstrel_FB'] },
+      { name: 'Main Boonstrip & DPS Classes', classes: ['Power_Reaper', 'DSP_Spellbreaker', 'DPS_Untamed', 'DPS_Berserker', 'DPS_Dragonhunter', 'DPS_Amalgam', 'DPS_Evoker'] },
+      { name: 'Other Boonstrip & DPS Classes', classes: ['DPS_Tempest', 'Core_Necromancer', 'StripDPS_Virtuoso'] }
+    ],
     unmappedEmojis: [],
     fetchedAt: new Date().toISOString(),
     mock: true

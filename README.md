@@ -11,7 +11,9 @@ builder, ending with a spreadsheet-style PNG you can post back to Discord.
 - **One-link fetch** — paste the message link of the first signup post;
   follow-up posts by the same author are found and merged automatically.
 - **Player pool** — every signed-up member as a draggable chip with their
-  classes, confirmed/maybe status, filtering, and unassigned-first sorting.
+  classes and confirmed/maybe status. Filter by class (organized by the
+  groupings from the signup posts) and sort alphabetically, unassigned-first,
+  by attendance, or by flexibility.
 - **Party grid** — drag players into party slots; a class picker appears
   whenever the choice is ambiguous, and Cancel fully undoes the move.
 - **Auto-fill** — one click fills the remaining slots, scarce roles first,

@@ -1,19 +1,31 @@
 import { useState } from 'react'
 
-// Form-based editor for config/classes.json — emoji↔class mapping and the
-// Yes/Maybe attendance emoji names. Saving writes the file on disk; renamed
-// emoji keys are propagated to columns and the current sheet by the caller.
-export default function ClassesEditor({ classes, attendance, onSave, onCancel }) {
+// Form-based editor for the class config — emoji↔class mapping, the Yes/Maybe
+// attendance emoji names, and each class's role grouping. Saving writes the
+// file on disk; renamed emoji keys are propagated to columns and the current
+// sheet by the caller.
+export default function ClassesEditor({ classes, attendance, groups, onSave, onCancel }) {
   const [yes, setYes] = useState((attendance?.yes || []).join(', '))
   const [maybe, setMaybe] = useState((attendance?.maybe || []).join(', '))
+
+  // Role choices: every known grouping (scraped and configured) + Unknown.
+  const roleOptions = [...new Set([
+    ...(groups || []).map(g => g.name),
+    ...Object.values(classes).map(c => c.role?.trim()).filter(Boolean),
+    'Unknown'
+  ])]
+  const groupOf = (key) => (groups || []).find(g => g.classes.includes(key))?.name
+
   const [rows, setRows] = useState(Object.entries(classes).map(([key, c]) => ({
-    origKey: key, key, label: c.label || '', short: c.short || '', color: c.color || '#888888'
+    origKey: key, key,
+    label: c.label || '', short: c.short || '', color: c.color || '#888888',
+    role: c.role?.trim() || groupOf(key) || 'Unknown'
   })))
   const [error, setError] = useState(null)
   const [saving, setSaving] = useState(false)
 
   const update = (i, patch) => setRows(rs => rs.map((r, idx) => (idx === i ? { ...r, ...patch } : r)))
-  const addRow = () => setRows(rs => [...rs, { origKey: null, key: '', label: '', short: '', color: '#888888' }])
+  const addRow = () => setRows(rs => [...rs, { origKey: null, key: '', label: '', short: '', color: '#888888', role: 'Unknown' }])
   const removeRow = (i) => setRows(rs => rs.filter((_, idx) => idx !== i))
 
   const cleanEmoji = (s) => s.trim().replace(/^:+|:+$/g, '')
@@ -30,7 +42,8 @@ export default function ClassesEditor({ classes, attendance, onSave, onCancel })
       classesOut[key] = {
         label: r.label.trim() || key,
         short: r.short.trim() || key.slice(0, 5),
-        color: r.color
+        color: r.color,
+        role: r.role || 'Unknown'
       }
       if (r.origKey && r.origKey !== key) renames[r.origKey] = key
     })
@@ -69,6 +82,7 @@ export default function ClassesEditor({ classes, attendance, onSave, onCancel })
           <span className="col-label">Class label (on sheet)</span>
           <span className="col-short">Tag</span>
           <span className="col-color">Color</span>
+          <span className="col-role">Role</span>
           <span className="col-x" />
         </div>
         <div className="editor-rows">
@@ -82,6 +96,10 @@ export default function ClassesEditor({ classes, attendance, onSave, onCancel })
                 onChange={e => update(i, { short: e.target.value })} placeholder="Bers" />
               <input className="col-color" type="color" value={r.color}
                 onChange={e => update(i, { color: e.target.value })} title="Color used on the sheet" />
+              <select className="col-role" value={r.role} title="Grouping this class belongs to"
+                onChange={e => update(i, { role: e.target.value })}>
+                {roleOptions.map(o => <option key={o} value={o}>{o}</option>)}
+              </select>
               <button className="mini danger col-x" title="Remove class" onClick={() => removeRow(i)}>×</button>
             </div>
           ))}

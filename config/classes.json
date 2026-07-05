@@ -1,5 +1,5 @@
 {
-  "_comment": "Emoji names must match the Discord server's custom emoji names EXACTLY (the text between colons, e.g. :Support_Luminary:). 'attendance' lists the emoji names used for the Yes / Maybe poll at the top of the signup post.",
+  "_comment": "Emoji names must match the Discord server's custom emoji names EXACTLY (the text between colons, e.g. :Support_Luminary:). 'attendance' lists the emoji names used for the Yes / Maybe poll at the top of the signup post. 'role' is the grouping a class belongs to (shown in the filter and new-player popups); 'Unknown' is the fallback.",
   "attendance": {
     "yes": [
       "Pika_cookie"
@@ -12,97 +12,116 @@
     "Support_Luminary": {
       "label": "Luminary",
       "short": "Lum",
-      "color": "#2f6fde"
+      "color": "#2f6fde",
+      "role": "Main Support Classes"
     },
     "Support_Tubadoor": {
       "label": "Tuba",
       "short": "Tuba",
-      "color": "#c928c9"
+      "color": "#c928c9",
+      "role": "Main Support Classes"
     },
     "Hybrid_FB": {
       "label": "Hybrid FB",
       "short": "HyFB",
-      "color": "#3d85c6"
+      "color": "#3d85c6",
+      "role": "Main Support Classes"
     },
     "Minstrel_FB": {
       "label": "Minstrel FB",
       "short": "MiFB",
-      "color": "#3d85c6"
+      "color": "#3d85c6",
+      "role": "Other Support Classes"
     },
     "Support_Specter": {
       "label": "Support Specter",
       "short": "Spec",
-      "color": "#4f9d3f"
+      "color": "#4f9d3f",
+      "role": "Other Support Classes"
     },
     "Support_Evoker": {
       "label": "Support Evoker",
       "short": "SEvo",
-      "color": "#4f9d3f"
+      "color": "#4f9d3f",
+      "role": "Main Support Classes"
     },
     "Support_Druid": {
       "label": "Support Druid",
       "short": "Druid",
-      "color": "#4f9d3f"
+      "color": "#4f9d3f",
+      "role": "Main Support Classes"
     },
     "Support_Harbinger": {
       "label": "Support Harbinger",
       "short": "Harb",
-      "color": "#4f9d3f"
+      "color": "#4f9d3f",
+      "role": "Other Support Classes"
     },
     "Support_DH": {
       "label": "Support DH",
       "short": "SDH",
-      "color": "#4f9d3f"
+      "color": "#4f9d3f",
+      "role": "Other Support Classes"
     },
     "Power_Reaper": {
       "label": "Reaper",
       "short": "Reap",
-      "color": "#2d7a1f"
+      "color": "#2d7a1f",
+      "role": "Main Boonstrip & DPS Classes"
     },
     "DSP_Spellbreaker": {
       "label": "DPS Spellbreaker",
       "short": "Spb",
-      "color": "#e69138"
+      "color": "#e69138",
+      "role": "Main Boonstrip & DPS Classes"
     },
     "DPS_Untamed": {
       "label": "DPS Untamed",
       "short": "Unt",
-      "color": "#cc4125"
+      "color": "#cc4125",
+      "role": "Main Boonstrip & DPS Classes"
     },
     "DPS_Berserker": {
       "label": "DPS Berserker",
       "short": "Bers",
-      "color": "#cc0000"
+      "color": "#cc0000",
+      "role": "Main Boonstrip & DPS Classes"
     },
     "DPS_Dragonhunter": {
       "label": "DPS Dragonhunter",
       "short": "DrgH",
-      "color": "#cc0000"
+      "color": "#cc0000",
+      "role": "Main Boonstrip & DPS Classes"
     },
     "DPS_Amalgam": {
       "label": "DPS Amalgam",
       "short": "Amal",
-      "color": "#a61c00"
+      "color": "#a61c00",
+      "role": "Main Boonstrip & DPS Classes"
     },
     "DPS_Evoker": {
       "label": "DPS Evoker",
       "short": "DEvo",
-      "color": "#a61c00"
+      "color": "#a61c00",
+      "role": "Main Boonstrip & DPS Classes"
     },
     "DPS_Tempest": {
       "label": "DPS Tempest",
       "short": "Temp",
-      "color": "#a61c00"
+      "color": "#a61c00",
+      "role": "Other Boonstrip & DPS Classes"
     },
     "Core_Necromancer": {
       "label": "Core Necro",
       "short": "Necro",
-      "color": "#38761d"
+      "color": "#38761d",
+      "role": "Other Boonstrip & DPS Classes"
     },
     "StripDPS_Virtuoso": {
       "label": "Strip Virtuoso",
       "short": "Virt",
-      "color": "#9900ff"
+      "color": "#9900ff",
+      "role": "Other Boonstrip & DPS Classes"
     }
   }
 }

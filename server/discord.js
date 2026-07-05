@@ -55,6 +55,30 @@ async function discoverFollowups(anchor, channelId, token) {
     .sort((a, b) => Date.parse(a.timestamp) - Date.parse(b.timestamp))
 }
 
+// Each signup post is one class grouping: the post's text is the group name
+// ("Main Support Classes", …) and its reactions are the group's classes.
+// Emojis written inside the text also count, as a fallback. Posts whose
+// reactions contain no known classes (e.g. the attendance post) are skipped.
+function buildGroups(messages, knownClasses) {
+  const groups = []
+  for (const msg of messages) {
+    const classNames = []
+    const add = (n) => { if (knownClasses.has(n) && !classNames.includes(n)) classNames.push(n) }
+    for (const r of msg.reactions || []) {
+      if (r.emoji?.name) add(r.emoji.name)
+    }
+    for (const m of (msg.content || '').matchAll(/<a?:(\w+):\d+>/g)) add(m[1])
+    if (classNames.length === 0) continue
+
+    const nameLine = (msg.content || '').split('\n')
+      .map(l => l.replace(/<a?:\w+:\d+>/g, '').replace(/[*_~`#>|]/g, '').trim())
+      .find(l => l.length > 0)
+    const name = (nameLine || '').replace(/:+\s*$/, '').trim() || `Group ${groups.length + 1}`
+    groups.push({ name, classes: classNames })
+  }
+  return groups
+}
+
 export async function fetchRoster(link, token, cfg) {
   const targets = parseMessageLinks(link)
   const { guildId, channelId } = targets[0]
@@ -140,6 +164,7 @@ export async function fetchRoster(link, token, cfg) {
   list.sort((a, b) => a.name.localeCompare(b.name))
   return {
     members: list,
+    groups: buildGroups(messages, knownClasses),
     unmappedEmojis: [...new Set(unmapped)],
     postsScanned: messages.length,
     fetchedAt: new Date().toISOString()

@@ -1,6 +1,6 @@
 {
   "_comment": "Default party layout. 'allowed' lists the emoji names (see classes.json) that normally fill each column. Columns and party count can also be changed live in the app's Settings panel.",
-  "parties": 6,
+  "parties": 5,
   "columns": [
     {
       "id": "stab1",
