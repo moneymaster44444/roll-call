@@ -1,0 +1,59 @@
+{
+  "_comment": "Default party layout. 'allowed' lists the emoji names (see classes.json) that normally fill each column. Columns and party count can also be changed live in the app's Settings panel.",
+  "parties": 6,
+  "columns": [
+    {
+      "id": "stab1",
+      "name": "1st Stab",
+      "allowed": [
+        "Support_Luminary",
+        "Support_Tubadoor",
+        "Hybrid_FB",
+        "Minstrel_FB"
+      ]
+    },
+    {
+      "id": "healer",
+      "name": "Healer",
+      "allowed": [
+        "Support_Specter",
+        "Support_Evoker",
+        "Support_Druid",
+        "Support_Harbinger"
+      ]
+    },
+    {
+      "id": "stab2",
+      "name": "2nd Stab",
+      "allowed": [
+        "Support_Luminary",
+        "Support_Tubadoor",
+        "Hybrid_FB",
+        "Minstrel_FB"
+      ]
+    },
+    {
+      "id": "boonrip",
+      "name": "Boonrip",
+      "allowed": [
+        "Power_Reaper",
+        "DSP_Spellbreaker",
+        "DPS_Untamed"
+      ]
+    },
+    {
+      "id": "dps",
+      "name": "DPS",
+      "allowed": [
+        "DPS_Untamed",
+        "DPS_Berserker",
+        "DPS_Dragonhunter",
+        "DPS_Amalgam",
+        "DPS_Evoker",
+        "DPS_Tempest",
+        "Core_Necromancer",
+        "StripDPS_Virtuoso"
+      ]
+    }
+  ]
+}

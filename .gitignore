@@ -1,0 +1,14 @@
+# Dependencies & build output
+node_modules/
+dist/
+
+# Secrets — never commit the bot token
+.env
+
+# Local tooling
+.claude/
+
+# OS / editor noise
+Thumbs.db
+.DS_Store
+*.log

@@ -1,0 +1,108 @@
+{
+  "_comment": "Emoji names must match the Discord server's custom emoji names EXACTLY (the text between colons, e.g. :Support_Luminary:). 'attendance' lists the emoji names used for the Yes / Maybe poll at the top of the signup post.",
+  "attendance": {
+    "yes": [
+      "Pika_cookie"
+    ],
+    "maybe": [
+      "Pika_wtfDidYouSay"
+    ]
+  },
+  "classes": {
+    "Support_Luminary": {
+      "label": "Luminary",
+      "short": "Lum",
+      "color": "#2f6fde"
+    },
+    "Support_Tubadoor": {
+      "label": "Tuba",
+      "short": "Tuba",
+      "color": "#c928c9"
+    },
+    "Hybrid_FB": {
+      "label": "Hybrid FB",
+      "short": "HyFB",
+      "color": "#3d85c6"
+    },
+    "Minstrel_FB": {
+      "label": "Minstrel FB",
+      "short": "MiFB",
+      "color": "#3d85c6"
+    },
+    "Support_Specter": {
+      "label": "Support Specter",
+      "short": "Spec",
+      "color": "#4f9d3f"
+    },
+    "Support_Evoker": {
+      "label": "Support Evoker",
+      "short": "SEvo",
+      "color": "#4f9d3f"
+    },
+    "Support_Druid": {
+      "label": "Support Druid",
+      "short": "Druid",
+      "color": "#4f9d3f"
+    },
+    "Support_Harbinger": {
+      "label": "Support Harbinger",
+      "short": "Harb",
+      "color": "#4f9d3f"
+    },
+    "Support_DH": {
+      "label": "Support DH",
+      "short": "SDH",
+      "color": "#4f9d3f"
+    },
+    "Power_Reaper": {
+      "label": "Reaper",
+      "short": "Reap",
+      "color": "#2d7a1f"
+    },
+    "DSP_Spellbreaker": {
+      "label": "DPS Spellbreaker",
+      "short": "Spb",
+      "color": "#e69138"
+    },
+    "DPS_Untamed": {
+      "label": "DPS Untamed",
+      "short": "Unt",
+      "color": "#cc4125"
+    },
+    "DPS_Berserker": {
+      "label": "DPS Berserker",
+      "short": "Bers",
+      "color": "#cc0000"
+    },
+    "DPS_Dragonhunter": {
+      "label": "DPS Dragonhunter",
+      "short": "DrgH",
+      "color": "#cc0000"
+    },
+    "DPS_Amalgam": {
+      "label": "DPS Amalgam",
+      "short": "Amal",
+      "color": "#a61c00"
+    },
+    "DPS_Evoker": {
+      "label": "DPS Evoker",
+      "short": "DEvo",
+      "color": "#a61c00"
+    },
+    "DPS_Tempest": {
+      "label": "DPS Tempest",
+      "short": "Temp",
+      "color": "#a61c00"
+    },
+    "Core_Necromancer": {
+      "label": "Core Necro",
+      "short": "Necro",
+      "color": "#38761d"
+    },
+    "StripDPS_Virtuoso": {
+      "label": "Strip Virtuoso",
+      "short": "Virt",
+      "color": "#9900ff"
+    }
+  }
+}
