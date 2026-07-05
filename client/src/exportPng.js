@@ -54,12 +54,14 @@ export function exportPng({ title, columns, partyCount, grid, members, classes }
       const cls = classes[a.cls]
       const color = cls?.color || '#000000'
       const name = member?.name || '?'
-      const label = cls?.label || a.cls
+      const label = cls?.label || a.cls || ''
       ctx.fillStyle = color
       ctx.font = 'bold 15px Arial'
       ctx.fillText(truncate(ctx, name, cellW - 14), x + 7, y + cellH / 2 - 10)
-      ctx.font = '13px Arial'
-      ctx.fillText(truncate(ctx, label, cellW - 14), x + 7, y + cellH / 2 + 11)
+      if (label) {
+        ctx.font = '13px Arial'
+        ctx.fillText(truncate(ctx, label, cellW - 14), x + 7, y + cellH / 2 + 11)
+      }
     })
   }
 

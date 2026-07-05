@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-export default function Grid({ columns, partyCount, grid, members, classes, highlightId, onLocatePool, onDrop, onRemove, onEditClass }) {
+export default function Grid({ columns, partyCount, grid, members, classes, highlightId, onLocatePool, onDrop, onRemove, onEditClass, onSetupPlayer }) {
   const [hoverKey, setHoverKey] = useState(null)
   const tableRef = useRef(null)
 
@@ -44,7 +44,22 @@ export default function Grid({ columns, partyCount, grid, members, classes, high
                       try { onDrop(key, col.id, JSON.parse(e.dataTransfer.getData('text/plain')), rect) } catch {}
                     }}
                   >
-                    {member ? (
+                    {member?.placeholder ? (
+                      <div
+                        className="placed-chip placeholder"
+                        draggable
+                        onDragStart={e => {
+                          e.dataTransfer.setData('text/plain', JSON.stringify({
+                            memberId: member.id, fromCell: key
+                          }))
+                        }}
+                      >
+                        <button className="choose-link" onClick={() => onSetupPlayer(key, member.id, col.id)}>
+                          Choose Name and Class
+                        </button>
+                        <button className="remove" title="Remove" onClick={() => onRemove(key)}>×</button>
+                      </div>
+                    ) : member ? (
                       <div
                         className="placed-chip"
                         draggable
